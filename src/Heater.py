@@ -4,7 +4,7 @@ import random
 class Heater: 
     def __init__(self, name: str, min_temp: float = 0): 
         self.name = name
-        self.temp = 21 # Temperature measured in celsius
+        self.temp = 1 # Temperature measured in celsius
         #self.wetness = None # Wetness based water-height in milimeters)
         self.state = False
         self.min_temp = min_temp
@@ -19,8 +19,8 @@ class Heater:
         self.temp = temperature 
 
     def run(self):
-        self.state = self.temp <= self.min_temp
-        if self.state: 
+        self.state = self.temp < self.min_temp
+        if self.state and random.randint(0, 1) != 0: 
             self.temp += 1
         else: 
             self.temp += random.randint(-1, 1)
