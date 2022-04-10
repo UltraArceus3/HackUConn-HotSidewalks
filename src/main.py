@@ -1,7 +1,7 @@
 from Heater import Heater
 from WetnessDetection import WetnessDetector
+import time
 
-heaters = []
 
 _heater_names = [
     "North",
@@ -13,17 +13,33 @@ _heater_names = [
     "Buckley",
     "McHugh",
     "Werth",
-    "Putnam"
+    "Putnam",
 ]
+
+def to_csv(heaters, delta, separator = "|"):
+    with open("src/data.txt", "w") as f:
+        f.write(str(delta) + separator)
+        for i in heaters:
+            f.write(str(i.__dict__) + separator)
 
 
 def main():
+
+
+
     heaters = [Heater("Heater " + str(x) + ": " + _heater_names[x]) for x in range(10)]
-    print(heaters)
-    print(heaters[2].__dict__)
+    delta = 0
 
-if __name__ == '__main__': 
+    #while True:
+    for _ in range(10000):
+        delta += 1
+        [x.run() for x in heaters]
+
+        to_csv(heaters, delta)
+        time.sleep(1)
+
+
+
+if __name__ == '__main__':
     main()
-
-    input()
-
+    
