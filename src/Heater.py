@@ -1,21 +1,35 @@
 import time 
-# Consider time.sleep(# of seconds) to send continuous requests. 
+import random
 
 class Heater: 
     def __init__(self): 
-        pass 
+        self.temp = None # Temperature measured in celsius
+        self.wetness = None # Wetness based water-height in milimeters)
+        self.state = False
+        self.min_temp = 0
     
-    def temperature(self): 
-        pass
+    def __str__(self): 
+        print(f"temperature: {self.temp}\nwetness: {self.wetness}")
+    
+    def get_temp(self): 
+        return self.temp
 
-    def location(self): # NOTE: Might need to be removed...
-        pass
+    def set_temp(self, temperature): 
+        self.temp = temperature 
 
-    def update(self): 
-        pass
+    def run(self):
+        self.state = self.temp <= self.min_temp
+        if self.state: 
+            self.temp += 1
+        else: 
+            self.temp += random.randint(-1, 1)
 
 
 if __name__ == '__main__': 
-    import random
-    # Include some test cases. 
 
+    h = Heater()
+    while True: 
+        temperature = float(random.randint(0, 75))
+        print(temperature)
+        h.set_temp(temperature)
+        time.sleep(1)
