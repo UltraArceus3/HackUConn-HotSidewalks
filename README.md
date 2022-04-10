@@ -1,3 +1,2 @@
-# HackUConn-HotSidewalks
+# HackUCONN - Hot Sidewalks
 
-test
