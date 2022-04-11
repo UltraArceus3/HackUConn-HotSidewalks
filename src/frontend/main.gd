@@ -23,7 +23,7 @@ func generate_panels():
 		print(heaters[i]["name"])
 		inst.heater_name = heaters[i]["name"]
 		inst.temp = str(heaters[i]["temp"]) + "°C"
-		#inst.hum =
+		inst.hum = str(heaters[i]["hum"]) + "%"
 		inst.togg = heaters[i]["state"]
 		inst.index = i
 		add_child(inst)
@@ -35,6 +35,7 @@ func update():
 		
 		obj.heater_name = heaters[i]["name"]
 		obj.temp = str(heaters[i]["temp"]) + "°C"
+		obj.hum = str(heaters[i]["hum"]) + "%"
 		obj.togg = heaters[i]["state"]
 		obj.index = i
 

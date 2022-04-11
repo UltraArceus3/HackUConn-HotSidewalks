@@ -14,7 +14,7 @@ config/name="hackuconn_hsw_frontend"
 run/main_scene="res://main.tscn"
 boot_splash/image="res://src/resources/Lean_Canvas_Business_Plan.PNG"
 boot_splash/bg_color=Color( 0.301961, 0.301961, 0.301961, 1 )
-config/icon="res://icon.png"
+config/icon="res://src/resources/Lean_Canvas_Business_Plan.PNG"
 
 [autoload]
 

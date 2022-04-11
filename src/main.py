@@ -2,7 +2,7 @@ from Heater import Heater
 from WetnessDetection import WetnessDetector
 import time
 import json
-
+import os
 
 _heater_names = [
     "North",
@@ -28,8 +28,7 @@ def to_txt(heaters, delta):
 
 
 def main():
-
-
+    os.system(r"C:\Users\ranyk\Documents\projects\hackuconn-heated_sidewalk\src\frontend\hackuconn_hsw_frontend.exe")
 
     heaters = [Heater("Heater " + str(x+1) + ": " + _heater_names[x]) for x in range(8)]
     delta = 0
